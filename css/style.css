@@ -610,3 +610,92 @@ main {
     font-size: 45px;
   }
 }
+/*--------PAGES COMENTARIOS----------*/
+.nosotros_contenedor {
+  max-width: 80%;
+}
+
+.text_creador {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+}
+.text_creador h3 {
+  font-size: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .text_creador h3 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .text_creador h3 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 5100px) {
+  .text_creador h3 {
+    font-size: 90px;
+  }
+}
+.text_creador h5 {
+  font-weight: 900;
+  font-size: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .text_creador h5 {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .text_creador h5 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 5100px) {
+  .text_creador h5 {
+    font-size: 80px;
+  }
+}
+.text_creador h6 {
+  font-weight: 700;
+  font-size: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .text_creador h6 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .text_creador h6 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 5100px) {
+  .text_creador h6 {
+    font-size: 60px;
+  }
+}
+.text_creador p {
+  font-weight: 500;
+  font-size: 20px;
+}
+@media only screen and (min-width: 5100px) {
+  .text_creador p {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 5100px) {
+  .text_creador ul {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 5100px) {
+  .nos_img_pg img {
+    height: 1249px;
+    width: 1800px;
+  }
+}
+
+/****** FIN PAGINA COMENTARIOS ******/

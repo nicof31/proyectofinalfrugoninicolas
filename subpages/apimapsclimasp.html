@@ -51,8 +51,14 @@
               </div>
               <div class="collapse" id="collapseDetalleA">
                 <div class="card card-body">
-                <p>Simulador realizado utilizando en el código función constructora, ingresando los datos por medio de prompt y se los convertierte a número a través de (number), los datos ingresados se guardan en un (Arrays) por medio de .push, a través de un ciclo for se contabiliza la cantidad de tareas a ingresar.
-                  Por medio de las funciones de orden superior (maps) y el (proceso del array con cálculos matemáticos se procesan los datos y se los muestra en consola y en el DOM, separados por tarea y ganancias, y datos gerenciales de ganancias totales.</p>
+                <p>Simulador realizado consumiendo dos API diferentes, una del clima y otra de mapas, se utilizaron diferentes funciones para que utilice la posición actual del dispositivo y en base a esto realice la consulta a las diferentes API retornado datos en el DOM del clima en tiempo real y la posición actual marcándola en mapa cartográfico, como valor agregado dentro la API del clima se consulta predicción a 3 días, tanto para los datos en tiempo real y predicción se utilizó el código del icono correspondiente de la condición del clima, se lo toma y parcea dentro del enlace https: para después insertarlo en el DOM como imagen, tambien se traduce a español la condición del cielo, se cuenta con la funcionalidad de un botón que permite al usuario renegar los datos nuevamente con los datos actuales. En caso del mapa se puede cambiar los tipos de mapas, para tal fin se creó capa para realizar el cambio según la necesidad del usuario, además permite crear puntos de referencia en el mapa que usuario desee, como funcionalidad se utilizan dos botones uno para borrar todas las marcas en mapa y otro para reganar la posición nuevamente con los datos actuales.
+                  Se utiliza la función new date para retornar la fecha de la posición actual.
+                  También se utilizo un formato de animación para mostrar texto en formato matrix una vez generados los datos en DOM.
+                  En este simulador se utilizan los conceptos de funciones, utilización de API (promesas con fetch), JSON, arrays, objetos, cálculos matemáticos, interacción del DOM por parte del usuario, librerías (Leaflet, Ajax anímate – Font awesome, Bootstrap).
+                  API clima: OpenStreetMap,
+                  API mapa: openweathermap,
+                  API capa mapa: ows.mundialis.                  
+                </p>
               </div>
               </div>
               <div>
@@ -61,7 +67,7 @@
               <div class="col">
                 <div class="collapse multi-collapse" id="multiCollapse1">
                   <div class="card card-body">
-                    <iframe src="../pdfcodigos/JSgeneradortareas.pdf" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                    <iframe src="../pdfcodigos/JSapiclimamapa.pdf" style="width:100%; height:700px;" frameborder="0" ></iframe>
                   </div>
                 </div>
               </div>
@@ -71,7 +77,7 @@
               <div class="col">
                   <div class="collapse multi-collapse" id="multiCollapse2">
                     <div class="card card-body">
-                      <iframe src="../pdfcodigos/HTMLgeneradornumquiniavanzado.pdf" style="width:100%; height:700px;" frameborder="0" ></iframe>
+                      <iframe src="../pdfcodigos/HTMLapiclimamapa.pdf" style="width:100%; height:700px;" frameborder="0" ></iframe>
                     </div>
                   </div>
                 </div>
@@ -96,20 +102,17 @@
                   <img src="../imgf/Logofooter2.webp" alt="Js Junior Trainer" class="footer_img"></img>
                 </a>
                 <ul class="nav col-md-4 justify-content-center" id="footer_ico">
-                  <li class="nav-item icono_footer" id="ico_foo"><a href="https://www.instagram.com" class="nav-link px-2 text-white"><i class="fa-brands fa-instagram" id="iconos_footer"></i></a></li>
-                  <li class="nav-item icono_footer"><a href="https://www.facebook.com" class="nav-link px-2 text-white"><i class="fa-brands fa-facebook-square" id="iconos_footer"></i></a></li>
+                  <li class="nav-item icono_footer"><a href="https://github.com/nicof31/proyectofinalfrugoninicolas" class="nav-link px-2 text-white"><i class="fa-brands fa-github"></i></a></li>
                 </ul>
           </div>
         </div> 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.boomcdn.com/libs/wow-js/1.3.0/wow.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
-<script>
-new WOW().init();
-</script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.boomcdn.com/libs/wow-js/1.3.0/wow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>
+      new WOW().init();
+    </script>
 </body>
 </html>
