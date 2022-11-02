@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>JS Junior Trainer | API Mapas Clima</title>
+</head>
+    <header id="header_boot">
+        <nav class="navbar navbar-expand-lg navbar-light bg-black" >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html"><img src="../imgf/logonav.webp" alt="Javascript" class="logo_cucina"></img></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                    <a class="nav-link" href="../pagesprincipal/simulacionpg.html">Simulación</a>
+                    <a class="nav-link" href="../pagesprincipal/api.html">API</a>
+                    <a class="nav-link" href="../pagesprincipal/comentarios.html">Comentarios</a>
+                  </div>
+              </div>
+            </div>
+          </nav>
+      </header>
+<body onload="onLoad()">
+  <div class="row align-items-md-stretch">
+    <div class="p-5 mb-4 bg-info rounded-3">
+      <div class="container-fluid py-5">
+       
+        <h1 class="display-5 fw-bold">Fecha y Hora Posición Actual</h1>
+        
+        <div id="" style="width:100%; height:1vw;">
+            <h3 class="col-md-8 fs-4" id="fechaHoraActual"></h3>
+        </div>
+        <div id="datosLuxon" style="width:100%; height:1vw;">
+          <output data-tz="america/argetina"></output>
+          <h3 class="col-md-8 fs-4" id="fechaHoraActualLuxon"></h3>
+      </div>
+        
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-white bg-dark rounded-3" >
+        <h2>Clima Posición Actual (tiempo real)</h2>
+        <p></p>
+        <div id="contenedor">
+          <div id="location" class="data"></div>
+          <div id="country" class="data"></div> 
+          <div id="description" class="data"></div>
+          <div id="humidity" class="data"></div>
+          <div id="temperature" class="data"></div>
+          <div id="feels_like" class="data"></div>
+          <div id="wind" class="data"></div>   
+          <div id="idIcon" class="data"></div>
+          <div id="imgIcon" class="data"></div>
+          <div id="imgClima" class="data"></div>        
+        </div>
+        <button class="btn btn-outline-light" id="btnnuevaConsulta" type="button" style="margin-top: 10px">Hacer una nueva consulta</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <Div>
+        <h2>Clima Predicción a 3 días</h2>
+        </Div>
+        <div>
+          <h4 id="fechaHoraPrediccionA" class="data1" ></h4>
+          <p></p>
+          <div id="contenedor">
+            <div id="temperatureA" class="data1"></div>
+            <div id="humidityA" class="data1"></div>
+            <div id="descriptionA" class="data1"></div>
+            <div id="imgIconA" class="data1"></div>
+            <div id="imgClimaA" class="data1"></div> 
+          </div>
+        </div>
+        <div>
+          <h4 id="fechaHoraPrediccionB" class="data1" ></h4>
+          <p></p>
+          <div id="contenedor">
+            <div id="temperatureB" class="data1"></div>
+            <div id="humidityB" class="data1"></div>
+            <div id="descriptionB" class="data1"></div>
+            <div id="imgIconB" class="data1"></div>
+            <div id="imgClimaB" class="data1"></div> 
+          </div>
+        </div>
+        <div>
+          <h4 id="fechaHoraPrediccionC" class="data1" ></h4>
+          <p></p>
+          <div id="contenedor">
+            <div id="temperatureC" class="data1"></div>
+            <div id="humidityC" class="data1"></div>
+            <div id="descriptionC" class="data1"></div>
+            <div id="imgIconC" class="data1"></div>
+            <div id="imgClimaC" class="data1"></div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+     
+      <h1 class="display-5 fw-bold">Posición Actual Mapa</h1>
+      <p class="col-md-8 fs-4"></p>
+      <button class="btn btn-primary btn-lg" id="btnRecargarMapa" type="button">Recargar posicion actual</button>
+      <button class="btn btn-primary btn-lg" id="btnborrarPuntosMapa" type="button">Borrar Marcas Mapa</button>
+      <div id="map" style="width:100%; height:50vw;">
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<footer class="text-center text-lg-start" id="footer_boot">
+  <div class="container d-flex justify-content-center py-2"></div>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+          <p class="col-md-4 mb-0 text-white">&copy; 2022 JS Junior Trainer</p>
+          <a href="../index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="../imgf/Logofooter2.webp" alt="Js Junior Trainer" class="footer_img"></img>
+          </a>
+          <ul class="nav col-md-4 justify-content-center" id="footer_ico">
+            <li class="nav-item icono_footer" id="ico_foo"><a href="https://www.instagram.com" class="nav-link px-2 text-white"><i class="fa-brands fa-instagram" id="iconos_footer"></i></a></li>
+            <li class="nav-item icono_footer"><a href="https://www.facebook.com" class="nav-link px-2 text-white"><i class="fa-brands fa-facebook-square" id="iconos_footer"></i></a></li>
+          </ul>
+      </div>
+  </div> 
+</footer>      
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+<script src="../js/apimapsclimapro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.boomcdn.com/libs/wow-js/1.3.0/wow.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+new WOW().init();
+</script>
+</body>
+</html>
