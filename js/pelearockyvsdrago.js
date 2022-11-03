@@ -20,13 +20,13 @@ const MAX_POTENCIA = Math.ceil(Math.random() * 10+30);
 let round = 0;
 
 //solcita ingresar un valor para dar inicio al juego
-let inicio = prompt("Por favor ingreses tipee inicio si quiere comenzar el juego");
+let inicio = prompt("Por favor tipee inicio si quiere comenzar el juego");
 
 if(inicio !=null){
 switch(inicio.toLowerCase()){
         case "inicio": 
             console.log("Tipeo: " + inicio);
-            document.write('<div class="card_juego"><h2>Incio Pelea</h2><img src="../imgf/iniciopelea.webp" /></div>');
+            document.write('<div class="card_juego"><h2>Inicio Pelea</h2><img src="../imgf/iniciopelea.webp" /></div>');
             
 while (fuerzaDrago > 0 && fuerzaRocky > 0){
     round = round + 1;
