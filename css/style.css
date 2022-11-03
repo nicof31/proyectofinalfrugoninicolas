@@ -531,6 +531,12 @@ main {
   align-items: center;
 }
 
+#map {
+  width:100%;
+  height:100vw; 
+  margin-top: 10px;
+}
+
 @media (min-width: 768px) {
   #fechClima h2 {
     font-size: 35px;
@@ -569,6 +575,10 @@ main {
 
   #btnborrarPuntosMapa{
     font-size: 20px;
+  }
+
+  #map {
+    height:75vw; 
   }
 }
 
@@ -609,6 +619,10 @@ main {
   #btnborrarPuntosMapa{
     font-size: 25px;
   }
+
+  #map {
+    height:50vw; 
+  }
 }
 @media (min-width: 5100px) {
   #fechClima h2 {
@@ -646,6 +660,10 @@ main {
 
   #btnborrarPuntosMapa{
     font-size: 35px;
+  }
+
+  #map {
+    height:50vw; 
   }
 }
 /*--------PAGES COMENTARIOS----------*/
