@@ -517,6 +517,20 @@ main {
   color: #fff;
 }
 
+#btnRecargarMapa{
+  font-size: 10px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnborrarPuntosMapa{
+  font-size: 10px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   #fechClima h2 {
     font-size: 35px;
@@ -547,6 +561,14 @@ main {
 
   #cliPosPredicc p {
     font-size: 18px;
+  }
+
+  #btnRecargarMapa{
+    font-size: 20px;
+  }
+
+  #btnborrarPuntosMapa{
+    font-size: 20px;
   }
 }
 
@@ -579,6 +601,14 @@ main {
   #cliPosPredicc p {
     font-size: 28px;
   }
+
+  #btnRecargarMapa{
+    font-size: 25px;
+  }
+
+  #btnborrarPuntosMapa{
+    font-size: 25px;
+  }
 }
 @media (min-width: 5100px) {
   #fechClima h2 {
@@ -608,6 +638,14 @@ main {
 
   #cliPosPredicc p {
     font-size: 45px;
+  }
+
+  #btnRecargarMapa{
+    font-size: 35px;
+  }
+
+  #btnborrarPuntosMapa{
+    font-size: 35px;
   }
 }
 /*--------PAGES COMENTARIOS----------*/
